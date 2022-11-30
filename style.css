@@ -1,0 +1,721 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 60%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #444;
+  background-color: #464949;  
+}
+
+.container-block {
+  display: block;
+  width: 100%;
+}
+
+.registration-entry {
+  display: flex;
+  width: 100%;
+  gap: 10px;  
+}
+
+.container-block img {  
+  width: 100%;  
+}
+
+.bank {
+  text-align: center;
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 50px;
+  padding-right: 100px;
+  color: #fff;
+  text-shadow: 2px 2px 15px #44d457, -10px -10px 30px #497e0d;
+  -webkit-text-stroke: 2px #ffffff;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 5px;
+}
+
+.flex-end{
+  justify-content: flex-end;
+}
+
+.button-registration-entry {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0 20px;
+  margin: 8px 10px 8px 0;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 120px;
+  height: 50px;  
+}
+
+.entry {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;  
+  margin-top: 70px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 0 2rem; */
+} 
+
+.modal-content-flex {
+  display: flex;
+   
+}
+
+.loginEntry {
+  display: block;
+  border-radius: 5px;
+  background-color: #fefefe;
+  margin: 5px 10px 5px 0; 
+  border: 1px solid #888;
+  width: 300px;
+  
+}
+
+.loginEntry h2 {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.login {
+  display: block;
+}
+
+.login__input {  
+  display: block;
+  text-align: center;
+  width: 290px;
+  padding:  5px;
+  margin: 3px auto;
+  border-radius: 10px;
+  border: solid 2px #888;
+}
+
+.login__input:hover {  
+  border: solid 2px rgb(178, 212, 174);
+}
+
+.clearfix {
+  display: flex;
+  width: 290px;
+  margin: 3px 3px;
+}
+
+.entryCancelBtn, .entrySignupBtn {  
+  background-color: #4CAF50;
+  color: white;
+  padding: 0 20px;
+  margin: 3px 3px 3px 3px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;    
+  height: 50px;
+  width: 170px;  
+}
+  
+.entryCancelBtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+  
+.entryCancelBtn:hover, .entrySignupBtn:hover {
+  border: solid 2px rgb(44, 42, 42);
+} 
+
+.button-registration-entry:hover {
+  border: solid 2px white;
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;  
+  margin-top: 70px;
+}
+
+.modal-content {
+  border-radius: 5px;
+  background-color: #fefefe;
+  margin: 5px 10px 5px 0; 
+  border: 1px solid #888;
+  width: 300px; 
+}
+
+.modal-content h2 {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.container {
+  margin: auto;
+}
+
+.registration {
+  display: block;
+  text-align: center;
+  width: 290px;
+  padding:  5px;
+  margin: 3px 3px;
+  border-radius: 10px;
+  border: solid 2px #888;
+}
+
+.registration:hover {  
+  border: solid 2px rgb(178, 212, 174);
+}
+
+.empty-input {
+  display: none;
+  font-size: 16px;
+  text-align: center;
+  width: 290px;
+  padding:  5px;
+  margin: 3px 3px;
+  border-radius: 10px;
+  color: red;
+  background-color: rgb(221, 219, 219);
+  border: solid 2px rgb(255, 0, 0);
+}
+
+.different-passwords {
+  display: none;
+  font-size: 16px;
+  text-align: center;
+  width: 290px;
+  padding:  5px;
+  margin: 3px 3px;
+  border-radius: 10px;
+  color: red;
+  background-color: rgb(221, 219, 219);
+  border: solid 2px rgb(255, 0, 0);
+}
+
+.entryError {
+  display: none;
+  font-size: 16px;
+  text-align: center;
+  width: 290px;
+  padding:  5px;
+  margin: 3px auto;
+  border-radius: 10px;
+  color: red;
+  background-color: rgb(221, 219, 219);
+  border: solid 2px rgb(255, 0, 0);
+}
+
+
+.cancelbtn, .signupbtn {  
+  background-color: #4CAF50;
+  color: white;
+  padding: 0 20px;
+  margin: 3px 3px 3px 3px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;  
+  height: 50px;
+  width: 170px;  
+}
+
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+.cancelbtn:hover, .signupbtn:hover {
+  border: solid 2px rgb(44, 42, 42);
+}
+
+.welcomeEntry {
+  font-size: 20px; 
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.logo {
+  height: 7rem;
+}
+
+.app-block {
+  display: none;
+  background-color: #f3f3f3;  
+  padding-top: 15px;
+  
+}
+
+.blockBtnExit {
+  display: flex;
+}
+
+.btnExit {
+  background-color: #4CAF50;
+  color: white;  
+  margin-right: 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  height: 30px;
+  width: 70px;  
+}
+
+.btnExit:hover {
+  border: solid 2px rgb(44, 42, 42);
+}
+
+.welcome {
+  font-size: 30px;
+  text-align: center;
+  font-weight: 500;
+  margin-top: -20px;  
+}
+
+.app {
+  background-color: #f3f3f3;
+  position: relative;
+  max-width: 100rem; 
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  grid-template-rows: auto repeat(3, 15rem) auto;
+  gap: 2rem;
+  transition: all 1s;
+  
+}
+
+.balance {
+  grid-column: 1 / span 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 0.1rem;
+}
+
+.balance__label {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: -0.2rem;
+  margin-left: 10px;
+}
+
+.balance__date {
+  font-size: 1.4rem;
+  color: rgb(110, 110, 110);
+  margin-left: 10px;
+}
+
+.balance__value {
+  font-size: 4.5rem;
+  font-weight: 400;
+}
+
+
+.transactions {
+  grid-row: 2 / span 3;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: scroll;
+}
+
+.transactions__row {
+  padding: 2.25rem 4rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.transactions__type {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.1rem 1rem;
+  border-radius: 10rem;
+  margin-right: 2rem;
+}
+
+.transactions__date {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgb(86, 86, 86);
+}
+
+.transactions__type--deposit {
+  background-image: linear-gradient(to top left, #399bb3, #72d6e4);
+}
+
+.transactions__type--withdrawal {
+  background-image: linear-gradient(to top left, #f07b0d, #ca7e1a);
+}
+
+.transactions__value {
+  font-size: 1.8rem;
+  margin-left: auto;
+}
+
+.total {
+  grid-row: 5 / 6;
+  display: flex;
+  align-items: baseline;
+  padding: 0 0.3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.total__label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 0.8rem;
+}
+
+.total__value {
+  font-size: 2.2rem;
+  margin-right: 2.5rem;
+}
+
+.total__value--in,
+.total__value--interest {
+  color: #399bb3;
+}
+
+.total__value--out {
+  color: #f07b0d;
+}
+
+.btn--sort {
+  margin-left: auto;
+  border: none;
+  background: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.operation {
+  border-radius: 1rem;
+  padding: 3rem 4rem;
+  color: #333;
+}
+
+.operation--transfer {
+  background-image: linear-gradient(to top left, #547202, #b7d433);
+}
+
+.operation--loan {
+  background-image: linear-gradient(to top left, #068394, #40dad2);
+}
+
+.operation--close {
+  background-image: linear-gradient(to top left, #e93c07, #d36c71);
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 2.5fr 2.5fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.4rem 1rem;
+}
+
+.form.form--loan {
+  grid-template-columns: 2.5fr 1fr 2.5fr;
+}
+
+.form__label--loan {
+  grid-row: 2;
+}
+
+.form__input {
+  width: 100%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-family: inherit;
+  font-size: 1.6rem;
+  text-align: center;
+  color: #333;
+  padding: 0.3rem 1rem;
+  border-radius: 0.7rem;
+  transition: all 0.3s;
+}
+
+.form__input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.form__label {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.form__btn {
+  border: none;  
+  border-radius: 0.7rem;
+  font-size: 1.8rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.form__btn:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.logout-timer {
+  padding: 0 0.3rem;
+  margin-top: 1.9rem;
+  text-align: right;
+  font-size: 1.25rem;
+}
+
+.timer {
+  font-weight: 600;
+}
+
+.returnLoan {
+  display: none;
+  text-align: center;  
+}
+
+.loanContainer p {
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+
+.summReturnLoan {
+  font-size: 24px;
+}
+
+.btnReturnLoan {
+  margin-top: 10px;
+  border: none;
+  width: 50px;
+  border-radius: 0.7rem;
+  font-size: 1.8rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.infoLoan {
+  display: none;
+  text-align: center;
+  font-size: 20px;
+}
+
+.infoСlose {
+  display: none;
+  text-align: center;
+  font-size: 20px;
+}
+
+.modalOpen {
+  display: block;   
+}
+
+.displayNone {
+  display: none;
+}
+
+
+/* 768px - 992px */
+@media screen and (max-width: 992px) {
+  .bank {    
+    font-size: 35px; 
+    padding-right: 5px;   
+  }
+
+  .balance__label {
+    margin-left: 5px;
+  }
+  
+  .balance__date {
+    margin-left: 5px;
+  }
+
+}
+
+/* 576px - 768px */
+@media screen and (max-width: 768px) {
+  .bank {    
+    font-size: 30px; 
+    padding-right: 5px;   
+  }
+
+  .welcome {
+    font-size: 30px;    
+    margin-top: 20px;  
+  }
+
+  .app {
+    display: block;
+    background-color: #f3f3f3;   
+    width: 100%;
+    transition: all 1s;
+  }
+
+  .balance__label {
+    margin-left: 5px;
+  }
+  
+  .balance__date {
+    margin-left: 5px;
+  }
+
+  .total {    
+    display: block;    
+  }
+
+  .total__label {
+    display: inline;
+    margin: 10px;
+  }
+
+  .total__value {
+    display: inline;
+    margin: 10px;
+  }
+
+  .btn--sort {
+    display: inline;
+    margin: 20px;
+  }
+
+}
+
+/* 495px - 576px */
+@media screen and (max-width: 576px) {
+  
+
+  .bank {    
+    font-size: 20px; 
+    padding-right: 5px;   
+  }
+
+  .welcome {
+    font-size: 20px;    
+    margin-top: 20px;  
+  }
+
+  .app {
+    display: block;
+    background-color: #f3f3f3;   
+    width: 100%;
+    transition: all 1s;
+  }
+
+  .balance__label {
+    margin-left: 5px;
+  }
+  
+  .balance__date {
+    margin-left: 5px;
+  }
+
+  .total {    
+    display: block;    
+  }
+
+  .total__label {
+    display: inline;
+    margin: 10px;
+  }
+
+  .total__value {
+    display: inline;
+    margin: 10px;
+  }
+
+  .btn--sort {
+    display: inline;
+    margin: 20px;
+  }
+  
+}
+  
+
+
+/* 320px - 495px */
+@media screen and (max-width: 495px) {
+  
+  .registration-entry {
+    display: block; 
+    width: 100%;      
+  }
+
+  .bank {    
+    font-size: 30px;    
+  } 
+
+  .welcome {
+    font-size: 20px;    
+    margin-top: 20px;  
+  }
+
+  .app {
+    display: block;
+    background-color: #f3f3f3;   
+    width: 100%;
+    transition: all 1s;
+  }
+
+  .balance__label {
+    margin-left: 5px;
+  }
+  
+  .balance__date {
+    margin-left: 5px;
+  }
+
+  .total {    
+    display: block;    
+  }
+
+  .total__label {
+    display: inline;
+    margin: 10px;
+  }
+
+  .total__value {
+    display: inline;
+    margin: 10px;
+  }
+
+  .btn--sort {
+    display: inline;
+    margin: 20px;
+  }
+  
+}
